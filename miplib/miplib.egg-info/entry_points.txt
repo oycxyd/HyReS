@@ -1,0 +1,10 @@
+[console_scripts]
+miplib.correlatem = miplib.bin.correlatem:main
+miplib.fuse = miplib.bin.fuse:main
+miplib.import = miplib.bin.import:main
+miplib.ism = miplib.bin.ism:main
+miplib.register = miplib.bin.register:main
+miplib.resolution = miplib.bin.resolution:main
+pyimq.main = miplib.bin.pyimq:main
+pyimq.power = miplib.bin.power:main
+pyimq.subjective = miplib.bin.subjective:main
