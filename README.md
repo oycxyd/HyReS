@@ -14,11 +14,11 @@ Clone the repository and create the required environment by:
 
 ## Generating training images
 
-`Training_Data_Generation.ipynb`
+`Training_data_generation.ipynb`
 
 ## Training your own FRCGAN
 
-`FRCGAN_Finetune.ipynb`
+`FRCGAN_finetune.ipynb`
 
 ## Inference by pre-trained FRCGAN weights
 
