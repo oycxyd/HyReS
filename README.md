@@ -3,8 +3,28 @@ Hyperspectral Image Restoration and Super-resolution with Physics-Aware Deep Lea
 
 latest arxiv: https://arxiv.org/html/2503.02908v2
 
-<img width="1272" height="1012" alt="grafik" src="https://github.com/user-attachments/assets/8562181a-f37f-406c-a292-4407ef5d8730" />
+<img width="1400" height="1044" alt="grafik" src="https://github.com/user-attachments/assets/c0047ce4-c358-4da0-9f3f-2bac28694007" />
+
 
 
 ## Getting started
+Clone the repository and create the required environment by:
+
+`conda env create -f .yml`
+
+## Generating training images
+
+`Training_Data_Generation.ipynb`
+
+## Training your own FRCGAN
+
+`FRCGAN_Finetune.ipynb`
+
+## Inference by pre-trained FRCGAN weights
+
+`FRCGAN_inference.ipynb`
+
+## Evaluation & visualisation of restored images
+
+`Image_Evaluation.ipynb`
 
