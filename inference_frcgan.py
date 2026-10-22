@@ -30,7 +30,7 @@ def FRCGAN_restore (input_dir, output_dir, scalefactor=4, model_name = 'net_g_40
     
     output_dir =os.path.join(output_dir,'HyReS_x4')
     os.makedirs(output_dir, exist_ok=True)
-    
+    just_images = True
     if os.path.isfile(input_dir):
         paths = [input_dir]# if single image
     else:
@@ -52,6 +52,8 @@ def FRCGAN_restore (input_dir, output_dir, scalefactor=4, model_name = 'net_g_40
             try:
                 shutil.copy(os.path.join(input_dir,'minmax.yaml'), output_dir)
                 shutil.copy(os.path.join(input_dir,'features.yaml'), output_dir)
+                just_images = False
             except:
                 print('missing attributes files (minmax/features).')
-    _,_,_ = hyres_degenerator(output_dir)
+    if not just_images:
+        _,_,_ = hyres_degenerator(output_dir)

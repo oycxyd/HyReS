@@ -15,6 +15,16 @@ def entropy_rank(input_dir):
     rank = rank.astype(int)
     return ents, rank
 
+# def crisque (image):
+#     bq = brisque(image)
+#     pq = piqe(image)
+#     crisque = 100-2*(1/bq+1/pq)^-1
+#     return crisque
+
+# def FRC_resolution
+
+# def diff_psf
+
 def info_montage(input_dir, rank, use_features=True):
     info_images = []
     paths = natsorted((glob.glob(input_dir+"/*.tif")))
