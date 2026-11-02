@@ -1,6 +1,6 @@
 
 import numpy as np
-from scipy.signal import tukey
+from scipy.signal.windows import tukey
 
 
 def _nd_window(data, filter_function, **kwargs):
