@@ -1,4 +1,6 @@
-"""Notebook-friendly wrapper around the BasicSR / Real-ESRGAN training pipeline for FRCGAN.
+"""Notebook-friendly wrapper around the BasicSR / Real-ESRGAN training pipeline for FRC-GAN.
+
+Place this file in the HyReS repo root (next to ``realesrgan/``, ``basicsr/``, ``options/``).
 
 Usage
 -----
@@ -33,7 +35,7 @@ from pathlib import Path
 import yaml
 
 REPO_ROOT = Path(__file__).resolve().parent
-DEFAULT_BASE_OPTIONS = REPO_ROOT / 'options' / 'finetune_realesrgan_x4plus_pairdata.yml'
+DEFAULT_BASE_OPTIONS = REPO_ROOT / 'options' / 'finetune_realesrgan_x1plus_pairdata.yml'
 
 
 # ----------------------------------------------------------------------------------------
@@ -84,7 +86,7 @@ def build_options(name, dataroot_gt, dataroot_lq, meta_info, base_options=DEFAUL
                   checkpoint_freq=None, seed=0, use_tb_logger=None, overrides=None):
     """Return the resolved BasicSR option dict. ``None`` keeps the value from ``base_options``.
 
-    FRCGAN specific:
+    FRC-GAN specific:
         frc_weight   weight of the FRC term; 0 -> plain L1 pixel loss (baseline).
         l1_weight    weight of the L1 term inside the pixel loss.
         frc_window   Hann window before the FFT in the FRC loss.

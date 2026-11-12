@@ -1,9 +1,59 @@
-basicsr>=1.3.3.11
-facexlib>=0.2.0.3
-gfpgan>=0.2.1
-numpy
-opencv-python
-Pillow
-torch>=1.7
-torchvision
-tqdm
+# HyReS / FRC-GAN - Python dependencies for the four notebooks:
+#   1.FRCGAN_data_generation   2.FRCGAN_finetune_clean
+#   3.FRCGAN_inference         4.FRC_res_calc_multiformat
+# Tested on Python 3.12 (Windows 11 + RTX 5080) and 3.14 (Linux, CPU).
+#
+# Install in this order (details in INSTALL.md):
+#   1. torch + torchvision from the PyTorch index (NOT from PyPI: PyPI wheels on
+#      Windows are CPU-only)
+#   2. pip install -r requirements.txt                         (this file)
+#   3. pip install --no-deps --use-pep517 --no-build-isolation -e ./basicsr
+# Do not list or pip-install these: they are bundled in the repository:
+#   basicsr/    patched BasicSR 1.4.x (FRC loss, torchvision>=0.17 fix)
+#   realesrgan/ imported from the repo root; the PyPI package would pull a
+#               conflicting basicsr/gfpgan/facexlib
+#   miplib/     2021 miplib API used by notebook 4 (the 2026 release differs)
+
+# --- numerics / image I/O ------------------------------------- all notebooks
+numpy==2.4.6
+scipy==1.17.1
+scikit-image==0.26.0
+opencv-python==5.0.0.93
+pillow==13.0.0
+imageio==2.38.1          # notebook 4 (imageio.v2)
+tifffile==2026.3.3
+imagecodecs==2026.3.6    # tifffile: read LZW TIFFs written by cv2.imwrite (inference)
+matplotlib==3.11.2
+pandas==3.1.0            # notebook 4 (FRC tables / CSV)
+natsort==8.4.0
+PyYAML==6.0.3
+tqdm==4.70.1
+
+# --- mass-spectrometry imaging data ------------- hyres_utils (notebooks 1, 3)
+h5py==3.16.0
+pyimzML==1.5.5
+
+# --- BasicSR runtime (basicsr itself is installed --no-deps) ---- notebook 2, 3
+addict==2.4.0
+future==1.0.0
+lmdb==3.0.0
+requests==2.34.2
+yapf==0.43.0
+tensorboard==2.21.0      # replaces BasicSR's tb-nightly; used when use_tb_logger: true
+
+# --- no-reference image quality (crisque) ------- hyres_evals (notebooks 1, 4)
+brisque==0.2.0           # NumPy >= 2.4 issue patched in hyres_evals._BRISQUE
+libsvm-official==3.37.0  # SVM backend for brisque
+pypiqe==1.2
+imutils==0.5.4           # build_montages (info_montage)
+
+# --- bundled miplib (FRC resolution) ------------------------------ notebook 4
+SimpleITK==2.5.7
+PIMS==0.7
+psf==2026.1.18
+# miplib's Bio-Formats import (jpype1) is not needed for FRC and is omitted.
+
+# --- Jupyter ---------------------------------------------------------------
+jupyterlab==4.6.6
+ipykernel==7.4.0
+ipywidgets==8.1.9        # tqdm.auto progress bars in notebooks
