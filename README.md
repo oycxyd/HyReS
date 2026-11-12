@@ -6,7 +6,7 @@ latest arxiv: https://arxiv.org/html/2503.02908v2
 <img width="1400" height="1044" alt="grafik" src="https://github.com/user-attachments/assets/c0047ce4-c358-4da0-9f3f-2bac28694007" />
 
 
-# Installing HyReS / FRC-GAN
+# Installing HyReS / FRCGAN
 
 This guide sets up one environment that runs all four notebooks:
 
