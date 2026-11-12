@@ -171,7 +171,7 @@ See `2.FRCGAN_finetune_clean.ipynb`
 
 # Inference by pre-trained FRCGAN weights
 
-See `3. FRCGAN_inference.ipynb`
+See `3.FRCGAN_inference.ipynb`
 
 # Evaluation & visualisation of restored images
 
